@@ -4,6 +4,10 @@ Projeto feito com ReactJs e Google Maps API que recebe um array de coordenadas e
 
 ## Instruções
 
+Para que o mapa seja corretamente plotado na tela, é necessário que seja gerada uma chave no console de gerenciamento de API's do google. É necessário a ativação da API de Mapas, associação á uma conta de pagamento e a geração da chave em si.
+
+Assim que tiver essa chave, crie um arquivo na raiz desse projeto com o nome .env.local (Siga o exemplo pré-existente .env.local.example)
+
 Instalar dependêcias:
 
 `$ npm install`
