@@ -17,3 +17,17 @@ Instalar dependêcias:
 Acesse o browser em localhost:3000
 
 Obs.: Certifique-se que o projeto do servidor esteja rodando na porta correta.
+
+## Instruções - Docker
+
+Builda um docker context:
+
+`$ docker build -t nome-da-tag .`
+
+`$ docker run --name nome-do-container -p 80:80 -d nome-da-tag:latest`
+
+Verificar se seu servidor está rodando
+
+`$ docker logs nome-do-container`
+
+Visitar `htt://localhost:80`
