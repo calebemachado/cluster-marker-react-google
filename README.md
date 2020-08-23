@@ -17,6 +17,8 @@ O objetivo é desenvolver uma página bem simples utilizando o Maps Javascript A
 
 ## Observações
 
-Os projetos podem ser executados de forma separada ou pode ser usado o docker compose para que ambos sejam orquestrados.
+Existem três formas de rodar os dois projetos;
 
-Para detalhes específicos, acessar as pastas do frontend e da API.
+1. Executando separadamente cada um, observando os scripts de execução dentro do package.json de cada projeto
+2. Criando e executando separadamente cada container, utilizando o docker, observando detalhes de cada um com seu arquivo Dockerfile
+3. Utilizando o docker-compose que por sua vez observa os arquivos individuais Dockerfile de cada projeto
