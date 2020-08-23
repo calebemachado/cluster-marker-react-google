@@ -1,27 +1,32 @@
-version: "2"
+version: "3"
+
 services:
-  client:
-    image: marker-cluster-client
-    restart: always
+  backend:
+    container_name: backend
+    restart: unless-stopped
+    build: ./marker-cluster-server
     ports:
-      - "3000:3000"
-    volumes:
-      - ./marker-cluster-web:/marker-cluster-web
-      - /marker-cluster-web/node_modules
-    links:
-      - api
+      - "3333:3333"
+    env_file: ./marker-cluster-server/.env
+    environment:
+      - NODE_ENV=production
     networks:
-      - webappnetwork
-  api:
-    image: marker-cluster-api
-    restart: always
+      - internal
+  
+  frontend:
+    container_name: frontend
+    restart: unless-stopped
+    build: ./marker-cluster-web
+    # o path /app se refere ao WORKDIR dentro do Dockerfile do frontend
+    environment:
+      - NODE_PATH=/app/src
     ports:
-      - "9000:9000"
-    volumes:
-      - ./marker-cluster-server:/marker-cluster-server
-      - /marker-cluster-server/node_modules
+      - "80:80"
+    depends_on:
+      - backend
     networks:
-      - webappnetwork
+      - internal
+
+
 networks:
-  webappnetwork:
-    driver: bridge
+  internal:
