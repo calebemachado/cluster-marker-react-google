@@ -8,12 +8,12 @@ O objetivo é desenvolver uma página bem simples utilizando o Maps Javascript A
 
 ## Requisitos
 
-- HTML/CSS/JavaScript
-- React
-- NodeJS
-- Docker
-- Swagger API
-- Google Maps
+- [x] HTML/CSS/JavaScript
+- [x] React
+- [x] NodeJS
+- [x] Docker
+- [ ] Swagger API
+- [x] Google Maps
 
 ## Observações
 
